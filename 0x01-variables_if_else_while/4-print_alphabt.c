@@ -3,10 +3,10 @@
 /**
  * main - Entry point
  *
- * Description: print add alphabet letters exept q and e
+ * Description: print all aplhabet letters exept q and e
  *
- * Retutrn: Always 0 (Success)
- * */
+ * Return: Always 0 (Success)
+*/
 
 int main(void)
 {
