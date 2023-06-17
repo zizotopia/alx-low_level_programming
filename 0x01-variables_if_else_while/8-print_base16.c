@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -19,9 +19,8 @@ int main(void)
 		/* after 9 we jump till 96; '*/
 		if (digit == 57)
 			digit += 39;
-		digtit++;
+		digit++;
 	}
 	putchar('\n');
-
 	return (0);
 }
