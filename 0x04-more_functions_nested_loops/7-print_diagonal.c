@@ -1,31 +1,27 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
-*main- prints the largest prime factor
-*of a number
-*
-*Return: returns 0
-*/
+ * print_diagonal - printing lines diagonal
+ * @n: input variable
+ *
+ * Return: void
+ */
 
-int main(void)
+
+void print_diagonal(int n)
 {
-    long number = 612852475143;
-    int inc;
+        int i, j;
 
-    while (inc++ < number / 2)
-    {
-        if (number % inc == 0)
+        if (n <= 0)
+                _putchar('\n');
+        for (i = 0; i < n; i++)
         {
-            number /= 2;
-            continue;
+                for (j = 0; j < i; j++)
+                {
+                        _putchar(' ');
+                }
+                _putchar('\\');
+                _putchar('\n');
         }
 
-        for (inc = 3; inc < number / 2; inc += 2)
-        {
-            if (number % inc == 0)
-                number /= inc;
-        }
-    }
-    printf("%ld\n", number);
-    return (0);
 }
