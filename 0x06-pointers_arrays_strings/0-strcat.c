@@ -19,8 +19,9 @@ char *_strcat(char *dest, char *src)
 		c++;
 
 	/*iterate through each src array value without the null byte*/
-	for (c2 = 0; src[c2]; c2++)
+	for (c2 = 0; src[c2] ; c2++)
 		/*apend src[c2] to dest[c] while overwritting the bull byte in dest*/
-		dest[c++] = src[c2];
+		dest[c] = src[c2];
+		c++;
 	return (dest);
 }
