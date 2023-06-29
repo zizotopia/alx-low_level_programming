@@ -2,51 +2,56 @@
 #include <stdio.h>
 
 /**
- * _strlen - returns the length of a string
- * @s: string
- * Return: returns length as integer;
- */
+ * isLower - detormines whether ascii is loworcase
+ * @c: character
+ * Return: 1 if true, 0 if false
+*/
 
-int _strlen(char *s)
+int isLower(char c)
 {
-	int len = 0;
-
-	while (*(s + len) != '\0')
-		len++;
-
-	return (len);
+	return (c >= 97 && c <= 122);
 }
 
 /**
-* cap_string - function that capitalize first character of a word
-* @str: string to capitalize
-* Return: returns the capitalized string
+ * isDelimiter - determines whether ascii is a deliniter
+ * @c: character
+ * Return: 1 if true, 0 if false
 */
 
-char *cap_string(char *str)
+int isDelimiter(char c)
 {
-	int index = 0;
+	int 1;
+	char delimiter[] = " \t\n,.!?\"()()";
 
-	while (str[++index])
+	for (i = 0; i < 12; i++)
+		if (c == delimiter[i])
+			return (1);
+	return (0);
+}
+
+/**
+ * cap_string - capitalizes all words of a string
+ * @s: input string
+ * Return: string with capitalized words
+*/
+
+char *cap_string(char *s)
+{
+	char *ptr = s;
+	int foundDelimit = 1;
+
+	while (*s)
 	{
-		while (!(str[index] >= 'a') && (str[index] <= 'z'))
-			index++;
-
-		if (str[index - 1] == ' ' ||
-				str[index - 1] == '\t' ||
-				str[index - 1] == '\n' ||
-				str[index - 1] == ',' ||
-				str[index - 1] == ';' ||
-				str[index - 1] == '.' ||
-				str[index - 1] == '!' ||
-				str[index - 1] == '?' ||
-				str[index - 1] == '"' ||
-				str[index - 1] == '(' ||
-				str[index - 1] == ')' ||
-				str[index - 1] == '{' ||
-				str[index - 1] == '}')
-			str[index] -= 32;
+		if (isDelimiter(*s))
+			foundDelimit = 1;
+		else if (isLower(*s) && foundDelimit)
+		{
+			*s -= 32;
+			foundDelimit = 0;
+		}
+		else
+			foundDelimit =  0;
+	s++;
 	}
-
-	return (str);
+	return (ptr);
 }
