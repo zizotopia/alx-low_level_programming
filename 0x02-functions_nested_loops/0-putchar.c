@@ -1,16 +1,20 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - entry point
+ * main - Entry point
  *
- * Return: always 0
- */
+ * Description: pints _putchar using putchar prototype
+ *
+ * Return: Always 0 (success)
+*/
+
 int main(void)
 {
-    char _putchar;
-    
-    printf("_putchar\n", _putchar);
-    
-    return 0;
-}
+	char str[] = "_putchar";
+	int ch;
 
+	for (ch = 0; ch < 8; ch++)
+		_putchar(str[ch]);
+	_putchar('\n');
+	return (0);
+}
