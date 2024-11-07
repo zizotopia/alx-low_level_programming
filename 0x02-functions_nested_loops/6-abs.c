@@ -11,7 +11,13 @@
 
 int _abs(int n)
 {
-	if (n < 0)
-		n = (-1) * n;
-	return (n);
+    int zd = 15;
+        if (zd >= 0)
+        {
+            printf("%d\n", zd);
+        }
+        else 
+        {
+            printf("%d\n", zd * -1);
+        }  
 }
